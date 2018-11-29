@@ -1,27 +1,40 @@
-# NgxFormComponentsApp
+# Angular Form Components Collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+This is a collection of simple, stylable form components, which (should be) working on all relevant browsers. It is supposed to bridge the issue of some of the HTML 5 inputs (like type: "range") not working on select platforms (e.g. iOS).
 
-## Development server
+## Quick Start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Angular Version
+This library was built with the Angular CLI 7.1.0, you may run into issues using this with a lower version.
 
-## Code scaffolding
+### Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`npm i ngx-form-components --save`
 
-## Build
+### Import the module
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```ts
+import { NgxFormComponentsModule } from 'ngx-form-components';
 
-## Running unit tests
+@NgModule({
+  imports: [
+    // ...
+    NgxFormComponentsModule,
+    ...
+  ]
+})
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Add the component to you html file
 
-## Running end-to-end tests
+```html
+<form class="your-form>
+  ...
+  <nfc-range-input></nfc-range-input>
+  ...
+</form>
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## API
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+... coming soon
