@@ -1,6 +1,13 @@
 {
   "name": "ngx-form-components",
   "version": "0.0.1",
+  "description": "A collection of cross browser compatible form components",
+  "keywords" :["Angular","Form","Input","Range","Forms","Range Input"],
+  "license" : "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/JohnBra/ngx-form-components"
+  },
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0"

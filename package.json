@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build_lib": "ng build ngx-form-components",
-    "copy_license": "copy .\\LICENCSE .\\dist\\ngx-form-components",
-    "copy_readme": "copy .\\README.md .\\dist\\ngx-form-components",
+    "copy_license": "copy \".\\LICENSE\" \".\\dist\\ngx-form-components\"",
+    "copy_readme": "copy \".\\README.md\" \".\\dist\\ngx-form-components\"",
     "copy_files": "npm run copy_license && npm run copy_readme",
     "npm_pack": "cd dist/ngx-form-components && npm pack",
     "package": "npm run build_lib && npm run copy_files && npm run npm_pack"
