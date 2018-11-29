@@ -214,6 +214,7 @@ export class RangeInputComponent implements OnInit, DoCheck {
         }
       }
       this.setHighlightBarDimensions();
+      this.setTooltipDimensions();
     }
     return false;
   }
