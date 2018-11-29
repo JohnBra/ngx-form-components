@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RangeInputComponent implements OnInit {
 
+  minSliderLeft: number;
+  maxSliderLeft: number;
+  highlightBarWidth: number;
+  highlightBarLeft: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.minSliderLeft = 10;
+    this.maxSliderLeft = 50;
+    this.highlightBarWidth = 40;
+    this.highlightBarLeft = this.minSliderLeft;
   }
 
 }

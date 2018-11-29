@@ -1,3 +1,36 @@
-<p>
-  range-input works!
-</p>
+<div class="nfc-range-input nfc-range-input__bar">
+
+  <span style="position:absolute" [style.top.px]="-30" [style.left.px]="10" >10</span>
+  <span style="position:absolute" [style.top.px]="-30" [style.left.px]="50" >50</span>
+  <!-- <span style="position:absolute" *ngIf="range && combineToolTip" [style.top.px]="toolTipTop" [style.left.px]="combineToolTipLeft"  >{{range[0]}}-{{range[1]}}</span> -->
+
+
+  <div class="nfc-range-input__bar--highlight" [style.width.px]="highlightBarWidth" [style.left.px]="highlightBarLeft"></div>
+  <div class="nfc-range-input__slider-button" [style.left.px]="minSliderLeft"></div>
+  <div class="nfc-range-input__slider-button" [style.left.px]="maxSliderLeft"></div>
+
+</div>
+
+<!-- <div (clickOutside)="clickedOutside($event)" id="bar"  #bar   class="slidersContainer dbarClass"
+     (click)="clickedOnBar($event)"  (touchmove)="touchMove($event)"
+     (touchend)="mouseUp($event)">
+
+
+
+  <span style="position:absolute" *ngIf="range && toolTip && toolTips[0]"  [style.top.px]="toolTipTop" [style.left.px]="minSliderLeft" >{{range[0]}}</span>
+  <span style="position:absolute" *ngIf="range && toolTip && toolTips[1]" [style.top.px]="toolTipTop" [style.left.px]="maxSliderLeft" >{{range[1]}}</span>
+  <span style="position:absolute" *ngIf="range && combineToolTip" [style.top.px]="toolTipTop" [style.left.px]="combineToolTipLeft"  >{{range[0]}}-{{range[1]}}</span>
+
+  <div #minSlider   class="dslider minSlider dsliderClass" (mousedown)="minMouseDown($event)"
+       [style.left.px]="minSliderLeft" (mouseup)="mouseUp($event)" (touchstart)="minTouched($event)">
+  </div>
+
+  <div #maxSlider class="dslider maxSlider dsliderClass" (mousedown)="maxMouseDown($event)"
+       [style.left.px]="maxSliderLeft" (mouseup)="mouseUp($event)" (touchstart)="maxTouched($event)">
+  </div>
+
+  <div  #sliderHilight class="sliderHilight dhighlightClass" (click)="clickedOnhighlight($event)"
+        [style.width.px]="highlightWidth" [style.left.px]="highlightLeft" >
+
+  </div>
+</div> -->
