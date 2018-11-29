@@ -12,6 +12,7 @@
       "element",
       "nfc",
       "kebab-case"
-    ]
+    ],
+    "no-inferrable-types": false
   }
 }

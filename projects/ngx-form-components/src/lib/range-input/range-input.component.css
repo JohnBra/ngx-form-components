@@ -9,23 +9,40 @@
   cursor: pointer;
   top: 50%;
   transform: translateY(-50%);
+}
 
+.nfc-range-input__slider-button-styling {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  cursor: pointer;
+}
 
-  width: 16px;
-  height: 16px;
-  background: white;
-  border: 1px solid royalblue;
+.nfc-range-input__slider-button--hidden {
+  display: none;
 }
 
 .nfc-range-input__bar {
   width: 100%;
-  height: 6px;
+}
+
+.nfc-range-input__bar-styling {
+  height: 4px;
+  border-radius: 4px;
   background: lightgrey;
 }
 
-.nfc-range-input__bar--highlight {
+.nfc-range-input__bar-highlight {
   position: absolute;
   height: inherit;
+}
 
+.nfc-range-input__bar-highlight-styling {
   background: royalblue;
+}
+
+.nfc-range-input__tooltip {
+  position: absolute;
 }
