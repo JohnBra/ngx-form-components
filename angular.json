@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "ngx-form-components": {
+      "root": "projects/ngx-form-components",
+      "sourceRoot": "projects/ngx-form-components/src",
+      "projectType": "library",
+      "prefix": "nfc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-form-components/tsconfig.lib.json",
+            "project": "projects/ngx-form-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-form-components/src/test.ts",
+            "tsConfig": "projects/ngx-form-components/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-form-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-form-components/tsconfig.lib.json",
+              "projects/ngx-form-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-form-components-app"
