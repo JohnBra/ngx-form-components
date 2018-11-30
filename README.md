@@ -53,7 +53,7 @@ import { NgxFormComponentsModule } from 'ngx-form-components';
 * `barCssClass: string` optional, **css class for the bar component**
 * `sliderButtonCssClass: string` optional, **css class for the slider button component**
 
-**Hint: if you want to apply a custom style to your bar, highlight bar or slider button, you need to disable the view encapsulation for the specific component that includes your css class:**
+*Hint: if you want to apply a custom style to your bar, highlight bar or slider button, you need to disable the view encapsulation for the specific component that includes your css class:*
 
 ```ts
 import {Component, ViewEncapsulation} from '@angular/core';
