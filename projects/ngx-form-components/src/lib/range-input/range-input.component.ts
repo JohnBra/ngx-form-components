@@ -310,7 +310,7 @@ export class RangeInputComponent implements OnInit, DoCheck {
     this.toolTipTop = (this.sliderHeight + 10) * - 1;
     this.minToolTipWidth = this.getToolTipLength(this.range[0].toString());
     const cond = this.minToolTipWidth * 8 + this.minSliderLeft + 8;
-    if (cond > this.maxSliderLeft && this.toolTips ) {
+    if (cond > this.maxSliderLeft && this.toolTips && this.minRangeSlider) {
       this.combineToolTip = true;
       this.combineToolTipWidth = this.getToolTipLength(`${this.range[0]}-${this.range[1]}`) * 8;
       const maxLeft = this.rangeInPixels - this.combineToolTipWidth;
