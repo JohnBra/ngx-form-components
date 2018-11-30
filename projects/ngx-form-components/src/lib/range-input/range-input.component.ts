@@ -25,6 +25,7 @@ export class RangeInputComponent implements OnInit, DoCheck {
   @Input() step?: number = 1;
   @Input() toolTips?: boolean = false;
   @Input() minRangeSlider?: boolean = false;
+  @Input() defaultRange?: any;
   @Input() highlightBarCssClass?: string;
   @Input() barCssClass?: string;
   @Input() sliderButtonCssClass?: string;
@@ -93,15 +94,41 @@ export class RangeInputComponent implements OnInit, DoCheck {
   }
 
   ngOnInit() {
+    // sets range default value and removes the min slider button if disabled
+    this.setDefaultRange();
+    // sets all related dimensions (slider bar, -highlighter bar, -buttons and -tooltips)
+    this.setDimensions();
+    this.setCustomCss();
+  }
+
+  setDefaultRange() {
     // init range variable
-    this.range = [this.min, Math.round(this.max / 2)];
+    if (!isNaN(this.defaultRange)) {
+      this.range = [this.min, this.defaultRange];
+    } else if (Array.isArray(this.defaultRange) && this.defaultRange.length === 2 && !this.defaultRange.some(isNaN)) {
+      // check if default values are compliant with min and max values
+      if (this.defaultRange[0] >= this.min && this.defaultRange[1] <= this.max) {
+        // set default values to passed array if minRangeSlider is on
+        if (this.minRangeSlider) {
+          this.range = this.defaultRange;
+        } else {
+          // set default value to min if minRangeSlider is off
+          this.range = [this.min, this.defaultRange[1]];
+        }
+      } else {
+        // fallback if default values are not compliant with min and max values
+        console.error(`default range is not compliant with min and max values ... set fallback values`);
+        this.range = [this.min, Math.round(this.max / 2)];
+      }
+    } else {
+      // fallback if array has anything else than 2 slots, anything but numbers or is not array
+      console.error(`default range should be an array of numbers with two slots or single number ... set fallback values`);
+      this.range = [this.min, Math.round(this.max / 2)];
+    }
     // init min range, when it's only one slider
     if (!this.minRangeSlider) {
       this.renderer.addClass(this.minSliderButton.nativeElement, 'nfc-range-input__slider-button--hidden');
     }
-    // sets all related dimensions (slider bar, -highlighter bar, -buttons and -tooltips)
-    this.setDimensions();
-    this.setCustomCss();
   }
 
   setCustomCss() {
