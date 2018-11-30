@@ -1,4 +1,40 @@
 .container {
-  padding: 0 auto;
-  width:500px;
+  padding: 0 6%;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.headline-1 {
+  font-size: 36px;
+  line-height: 58px;
+  border-bottom: 1px solid #eeeeee;
+  margin: 2% 0;
+}
+
+.headline-2 {
+  font-size: 30px;
+  line-height: 49px;
+  margin: 1% 0;
+}
+
+.headline-3 {
+  font-size: 21px;
+  line-height: 34px;
+  margin: 4% 0;
+  color: #777;
+}
+
+.highlight-bar {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,e5060a+100 */
+  background: red; /* Old browsers */
+  background: -moz-linear-gradient(left, orange 0%, red 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, orange 0%,red 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, orange 0%,red 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.slider-button {
+  width: 25px;
+  height: 25px;
+  background: black;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
 }
