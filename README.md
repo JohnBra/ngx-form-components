@@ -30,7 +30,7 @@ import { NgxFormComponentsModule } from 'ngx-form-components';
 ### Add the desired component to you html file
 
 ```html
-<form class="your-form>
+<form class="your-form">
   ...
   <nfc-range-input></nfc-range-input>
   ...
