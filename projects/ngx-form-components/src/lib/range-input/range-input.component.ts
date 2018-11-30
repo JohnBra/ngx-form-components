@@ -42,14 +42,17 @@ export class RangeInputComponent implements OnInit, DoCheck {
   private onTouchedCallback: (_: any) => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
+  // dimensional variables
   minSliderLeft: number;
   maxSliderLeft: number;
-  highlightBarWidth: number;
-  highlightBarLeft: number;
-
   sliderWidth: number;
   sliderHeight: number;
   barWidth: number;
+  highlightBarWidth: number;
+  highlightBarLeft: number;
+
+  // calculation and event variables
+  range: number[];
   rangeDiff: number;
   minSliderClicked: boolean;
   minSelected: boolean;
@@ -60,16 +63,15 @@ export class RangeInputComponent implements OnInit, DoCheck {
   maxSliderInitialLeft: number;
   initialMaxMouseX: number;
   rangeInPixels: number;
+  minChange: number;
+  maxChange: number;
 
+  // tooltip variables
   combineToolTip: boolean = false;
   combineToolTipLeft: number;
   minToolTipWidth: number;
   combineToolTipWidth: number;
   toolTipTop: number;
-
-  range: number[];
-  minChange: number;
-  maxChange: number;
 
   constructor(private elementRef: ElementRef,
               private renderer: Renderer2,
