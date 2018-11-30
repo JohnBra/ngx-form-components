@@ -7,5 +7,17 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  title = 'ngx-form-components-app';
+
+  rangeValSingle: number;
+  rangeValArray: number[];
+
+  constructor() {}
+
+  handleRangeChangeSingle(rangeValEmitted: any) {
+    this.rangeValSingle = rangeValEmitted;
+  }
+
+  handleRangeChangeArray(rangeValEmitted: any) {
+    this.rangeValArray = rangeValEmitted;
+  }
 }

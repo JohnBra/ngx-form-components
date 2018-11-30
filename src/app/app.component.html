@@ -7,31 +7,57 @@
     <div class="headline-2">
       Range Input
     </div>
-    <div class="headline-3">
-      Default
-    </div>
-    <nfc-range-input></nfc-range-input>
 
-    <div class="headline-3">
-      With tooltips and min and max slider button
-    </div>
-    <nfc-range-input [minRangeSlider]="true" [toolTips]="true"></nfc-range-input>
-
-    <div class="headline-3">
-      With default values, tooltips, min and max
-    </div>
-    <nfc-range-input [minRangeSlider]="true" [toolTips]="true" [min]="-20" [max]="400" [defaultRange]="[-10, 337]"></nfc-range-input>
-    <div>
-      <pre>
-        &lt;nfc-range-input [min]="-20" [max]="400" [minRangeSlider]="true" [toolTips]="true">&lt;/nfc-range-input>
-      </pre>
+    <div class="input-example">
+      <div class="headline-3">
+        Default
+      </div>
+      <nfc-range-input></nfc-range-input>
     </div>
 
-
-    <div class="headline-3">
-      With custom highlight bar and button
+    <div class="input-example">
+      <div class="headline-3">
+        With tooltips and two slider buttons
+      </div>
+      <nfc-range-input [minRangeSlider]="true" [toolTips]="true"></nfc-range-input>
     </div>
-    <nfc-range-input [toolTips]="true" [highlightBarCssClass]="'highlight-bar'" [sliderButtonCssClass]="'slider-button'"></nfc-range-input>
+
+    <div class="input-example">
+      <div class="headline-3">
+        With default values (-10, 337), tooltips, min (-20) and max (400)
+      </div>
+      <nfc-range-input [minRangeSlider]="true" [toolTips]="true" [min]="-20" [max]="400" [defaultRange]="[-10, 337]"></nfc-range-input>
+    </div>
+
+    <div class="input-example">
+      <div class="headline-3">
+        With custom highlight bar and button
+      </div>
+      <nfc-range-input [toolTips]="true" [highlightBarCssClass]="'highlight-bar'" [sliderButtonCssClass]="'slider-button'"></nfc-range-input>
+    </div>
+
+    <div class="input-example">
+      <div class="headline-3">
+        Reading the emitted range value (number)
+      </div>
+      <nfc-range-input (rangeChange)="handleRangeChangeSingle($event)"></nfc-range-input>
+
+      <div>
+        Value read: {{rangeValSingle}}
+      </div>
+    </div>
+
+    <div class="input-example">
+      <div class="headline-3">
+        Reading the emitted range value (array)
+      </div>
+      <nfc-range-input [minRangeSlider]="true" (rangeChange)="handleRangeChangeArray($event)"></nfc-range-input>
+
+      <div>
+        Value read: [{{rangeValArray[0]}}, {{rangeValArray[1]}}]
+      </div>
+    </div>
+
   </div>
 </div>
 
