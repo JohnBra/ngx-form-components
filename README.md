@@ -1,5 +1,7 @@
 # Angular Form Components Collection
 
+[LIVE DEMO](https://johnbra.github.io/ngx-form-components/)
+
 This is a collection of simple, stylable form components, which (should be) working on all relevant browsers. It is supposed to bridge the issue of some of the HTML 5 inputs (like type: "range") not working on select platforms (e.g. iOS).
 
 Right now this lib only includes the range input component. The plan is to add more components if needed. Feel free to open an issue for component/feature requests or contribute with a pull request.
