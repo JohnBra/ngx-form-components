@@ -26,6 +26,7 @@
 
 .highlight-bar {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,e5060a+100 */
+  border-radius: 4px;
   background: red; /* Old browsers */
   background: -moz-linear-gradient(left, orange 0%, red 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left, orange 0%,red 100%); /* Chrome10-25,Safari5.1-6 */

@@ -304,7 +304,7 @@ export class RangeInputComponent implements OnInit, DoCheck {
     } else {
       this.highlightBarLeft = this.minSliderLeft;
     }
-    this.highlightBarWidth = this.maxSliderLeft - this.minSliderLeft;
+    this.highlightBarWidth = this.maxSliderLeft - this.minSliderLeft + (this.sliderWidth / 2);
   }
 
   setTooltipDimensions() {
