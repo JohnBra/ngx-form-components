@@ -2,6 +2,8 @@
 
 This is a collection of simple, stylable form components, which (should be) working on all relevant browsers. It is supposed to bridge the issue of some of the HTML 5 inputs (like type: "range") not working on select platforms (e.g. iOS).
 
+Right now this lib only includes the range input component. The plan is to add more components if needed. Feel free to open an issue for component/feature requests or contribute with a pull request.
+
 ## Quick Start
 
 ### Angular Version
@@ -25,7 +27,7 @@ import { NgxFormComponentsModule } from 'ngx-form-components';
 })
 ```
 
-### Add the component to you html file
+### Add the desired component to you html file
 
 ```html
 <form class="your-form>
@@ -61,10 +63,17 @@ import {Component, ViewEncapsulation} from '@angular/core';
   templateUrl: /* your html template */,
   styleUrls: /* your style sheets */,
   
-  
   encapsulation: ViewEncapsulation.None, // <-- this
 })
 export class AppComponent {
   // ...
 }
 ```
+
+#### Example usage
+
+... coming soon
+
+## License
+
+MIT © Jonathan Braat
