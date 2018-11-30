@@ -124,7 +124,6 @@ export class RangeInputComponent implements OnInit, DoCheck {
       }
     } else {
       // fallback if array has anything else than 2 slots, anything but numbers or is not array
-      console.error(`default range should be an array of numbers with two slots or single number ... set fallback values`);
       this.range = [this.min, Math.round(this.max / 2)];
     }
     // init min range, when it's only one slider

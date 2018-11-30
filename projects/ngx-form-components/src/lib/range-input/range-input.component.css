@@ -41,6 +41,7 @@
 
 .nfc-range-input__bar-highlight-styling {
   background: royalblue;
+  border-radius: 4px;
 }
 
 .nfc-range-input__tooltip {
