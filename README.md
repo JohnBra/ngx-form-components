@@ -10,6 +10,7 @@ Right now this lib only includes the range input component. The plan is to add m
 This library was built with the Angular CLI 7.1.0, you may run into issues using this with a lower version.
 
 ### Installation
+[![ngx-form-components](https://nodei.co/npm/ngx-form-components.png)](https://www.npmjs.com/package/ngx-form-components)
 
 `npm i ngx-form-components --save`
 
