@@ -75,7 +75,7 @@ export class AppComponent {
 
 #### Example usage
 
-... coming soon
+See [here](https://github.com/JohnBra/ngx-form-components/blob/master/src/app/app.component.html)
 
 ## License
 

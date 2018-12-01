@@ -1,7 +1,7 @@
 import {
   Component, DoCheck,
   ElementRef,
-  EventEmitter,
+  EventEmitter, forwardRef,
   HostListener,
   Input,
   IterableDiffers,
@@ -10,13 +10,20 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
+import {NG_VALIDATORS, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 const noop = () => {};
 
 @Component({
   selector: 'nfc-range-input',
   templateUrl: './range-input.component.html',
-  styleUrls: ['./range-input.component.css']
+  styleUrls: ['./range-input.component.css'],
+  providers: [
+    { provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => RangeInputComponent),
+      multi: true },
+    { provide: NG_VALIDATORS, useExisting: forwardRef(() => RangeInputComponent), multi: true }
+  ]
 })
 export class RangeInputComponent implements OnInit, DoCheck {
 
@@ -92,6 +99,10 @@ export class RangeInputComponent implements OnInit, DoCheck {
       } else {
         this.rangeChange.emit(this.range[1]);
       }
+    }
+    if (typeof this.maxSliderLeft === 'undefined' || typeof this.minSliderLeft === 'undefined'
+        || typeof this.highlightBarLeft === 'undefined') {
+      this.setDimensions();
     }
   }
 
