@@ -1,5 +1,6 @@
 import {
-  Component, DoCheck,
+  Component,
+  DoCheck,
   ElementRef,
   EventEmitter, forwardRef,
   HostListener,
@@ -10,7 +11,7 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
-import {NG_VALIDATORS, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const noop = () => {};
 
@@ -19,13 +20,10 @@ const noop = () => {};
   templateUrl: './range-input.component.html',
   styleUrls: ['./range-input.component.css'],
   providers: [
-    { provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => RangeInputComponent),
-      multi: true },
-    { provide: NG_VALIDATORS, useExisting: forwardRef(() => RangeInputComponent), multi: true }
+    { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => RangeInputComponent), multi: true }
   ]
 })
-export class RangeInputComponent implements OnInit, DoCheck {
+export class RangeInputComponent implements ControlValueAccessor, OnInit, DoCheck {
 
   @Input() min?: number = 0;
   @Input() max?: number = 100;
@@ -60,6 +58,7 @@ export class RangeInputComponent implements OnInit, DoCheck {
 
   // calculation and event variables
   range: number[];
+  rangeCache: number[];
   rangeDiff: number;
   minSliderClicked: boolean;
   minSelected: boolean;
@@ -87,6 +86,14 @@ export class RangeInputComponent implements OnInit, DoCheck {
     this.iterableDiffer = this.iterableDiffers.find([]).create(null);
   }
 
+  ngOnInit() {
+    // sets range default value and removes the min slider button if disabled
+    this.setDefaultRange();
+    // sets all related dimensions (slider bar, -highlighter bar, -buttons and -tooltips)
+    this.setDimensions();
+    this.setCustomCss();
+  }
+
   ngDoCheck() {
     const changes = this.iterableDiffer.diff(this.range);
     if (changes) {
@@ -100,18 +107,50 @@ export class RangeInputComponent implements OnInit, DoCheck {
         this.rangeChange.emit(this.range[1]);
       }
     }
-    if (typeof this.maxSliderLeft === 'undefined' || typeof this.minSliderLeft === 'undefined'
+    if (typeof this.maxSliderLeft === 'undefined'
+        || typeof this.minSliderLeft === 'undefined'
         || typeof this.highlightBarLeft === 'undefined') {
       this.setDimensions();
     }
   }
 
-  ngOnInit() {
-    // sets range default value and removes the min slider button if disabled
-    this.setDefaultRange();
-    // sets all related dimensions (slider bar, -highlighter bar, -buttons and -tooltips)
-    this.setDimensions();
+  writeValue(value: number[]): void {
+    if (value) {
+      if (value[0] === null) {
+        value[0] = this.min;
+      } else if (value[1] === null) {
+        value[1] = this.max;
+      } else {
+        if (this.range) {
+          const prevRange = this.rangeCache.slice(0);
+          if (value[0] > prevRange[1]) {
+            value[0] = prevRange[1];
+          } else if (value[0] < this.min) {
+            value[0] = this.min;
+          } else if (value[1] < prevRange[0]) {
+            value[1] = prevRange[0];
+          } else if (value[1] > this.max) {
+            value[1] = this.max;
+          }
+        }
+      }
+      this.update(value);
+    }
+  }
+
+  registerOnChange(onChange: any) {
+    this.onChangeCallback = onChange;
+  }
+
+  registerOnTouched(onTouched: any) {
+    this.registerOnTouched = onTouched;
+  }
+
+  update(range: number[]) {
+    this.range = [...range];
+    this.rangeCache = (JSON.parse(JSON.stringify(range)));
     this.setCustomCss();
+    this.setDimensions();
   }
 
   setDefaultRange() {
