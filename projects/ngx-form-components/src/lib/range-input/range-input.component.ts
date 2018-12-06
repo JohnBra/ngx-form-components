@@ -89,6 +89,7 @@ export class RangeInputComponent implements ControlValueAccessor, OnInit, DoChec
   ngOnInit() {
     // sets range default value and removes the min slider button if disabled
     this.setDefaultRange();
+    this.rangeCache = (JSON.parse(JSON.stringify(this.range)));
     // sets all related dimensions (slider bar, -highlighter bar, -buttons and -tooltips)
     this.setDimensions();
     this.setCustomCss();

@@ -1,6 +1,6 @@
 {
   "name": "ngx-form-components",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A collection of cross platform compatible form components",
   "keywords" :["Angular","Form","Input","Range","Forms","Range Input","ngx-form-components"],
   "license" : "MIT",
