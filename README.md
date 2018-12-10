@@ -44,17 +44,17 @@ import { NgxFormComponentsModule } from 'ngx-form-components';
 
 ### Range input
 
-#### Properties
-
-* `min: number` optional, **minimum range value** - `default value = 0`
-* `max: number` optional, **maximum range value** - `default value = 100`
-* `step: number` optional, **slider steps (e. g. 0->5->10 ..)** - `default value = 1`
-* `toolTips: boolean` optional, **enables/disables number over slider** - `default value = false`
-* `minRangeSlider: boolean` optional, **enables/disables left slider, if minRangeSlider = false, minimum is set as min slider value** - `default value = false`
-* `defaultRange: number || [number, number]` optional, **sets the default value for the slider** - `default value = [min, max/2]`
-* `highlightBarCssClass: string` optional, **css class for the highlightbar component**
-* `barCssClass: string` optional, **css class for the bar component**
-* `sliderButtonCssClass: string` optional, **css class for the slider button component**
+Property | Description | Default value
+---- | ---- | ----
+`min: number` | optional, **minimum range value** | `0`
+`max: number` | optional, **maximum range value** | `100`
+`step: number` | optional, **slider steps (e. g. 0->5->10 ..)** | `1`
+`toolTips: boolean` | optional, **enables/disables number over slider** | `false`
+`minRangeSlider: boolean` | optional, **enables/disables left slider, if minRangeSlider = false, minimum is set as min slider value** | `false`
+`defaultRange: number || [number, number]` | optional, **sets the default value for the slider** | `[min, max/2]`
+`highlightBarCssClass: string` | optional, **css class for the highlightbar component**
+`barCssClass: string` | optional, **css class for the bar component**
+`sliderButtonCssClass: string` | optional, **css class for the slider button component**
 
 *Hint: if you want to apply a custom style to your bar, highlight bar or slider button, you need to disable the view encapsulation for the specific component that includes your css class:*
 
