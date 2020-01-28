@@ -37,10 +37,10 @@ export class RangeInputComponent implements ControlValueAccessor, OnInit, DoChec
 
   @Output() rangeChange: EventEmitter<any> = new EventEmitter<any>();
 
-  @ViewChild('bar') bar: ElementRef;
-  @ViewChild('minSliderButton') minSliderButton: ElementRef;
-  @ViewChild('maxSliderButton') maxSliderButton: ElementRef;
-  @ViewChild('barHighlight') barHighlight: ElementRef;
+  @ViewChild('bar', { static: true }) bar: ElementRef;
+  @ViewChild('minSliderButton', { static: true }) minSliderButton: ElementRef;
+  @ViewChild('maxSliderButton', { static: true }) maxSliderButton: ElementRef;
+  @ViewChild('barHighlight', { static: true }) barHighlight: ElementRef;
 
   private valToPixelFactor: number;
   private iterableDiffer: any;
