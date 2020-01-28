@@ -9,7 +9,7 @@
     "url" : "https://github.com/JohnBra/ngx-form-components"
   },
   "peerDependencies": {
-    "@angular/common": "^7.1.0",
-    "@angular/core": "^7.1.0"
+    "@angular/common": "~8.2.14",
+    "@angular/core": "~8.2.14"
   }
 }
